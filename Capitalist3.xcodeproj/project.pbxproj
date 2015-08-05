@@ -14,6 +14,21 @@
 		E9FA04421B72C89100F6DC50 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9FA04411B72C89100F6DC50 /* Images.xcassets */; };
 		E9FA04451B72C89100F6DC50 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9FA04431B72C89100F6DC50 /* LaunchScreen.xib */; };
 		E9FA04511B72C89100F6DC50 /* Capitalist3Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA04501B72C89100F6DC50 /* Capitalist3Tests.swift */; };
+		E9FA04621B72D2FF00F6DC50 /* StockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA045A1B72D2FF00F6DC50 /* StockView.swift */; };
+		E9FA04631B72D2FF00F6DC50 /* InfoCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA045B1B72D2FF00F6DC50 /* InfoCardView.swift */; };
+		E9FA04641B72D2FF00F6DC50 /* InfoCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA045C1B72D2FF00F6DC50 /* InfoCardController.swift */; };
+		E9FA04651B72D2FF00F6DC50 /* WelcomeScreenAquireView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA045D1B72D2FF00F6DC50 /* WelcomeScreenAquireView.swift */; };
+		E9FA04661B72D2FF00F6DC50 /* InfoCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA045E1B72D2FF00F6DC50 /* InfoCardModel.swift */; };
+		E9FA04671B72D2FF00F6DC50 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA045F1B72D2FF00F6DC50 /* PlayerModel.swift */; };
+		E9FA04681B72D2FF00F6DC50 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA04601B72D2FF00F6DC50 /* StockModel.swift */; };
+		E9FA04691B72D2FF00F6DC50 /* TileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA04611B72D2FF00F6DC50 /* TileModel.swift */; };
+		E9FA046E1B72D33000F6DC50 /* GameBoardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA046A1B72D33000F6DC50 /* GameBoardModel.swift */; };
+		E9FA046F1B72D33000F6DC50 /* GameSceneModelAndSequencer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA046B1B72D33000F6DC50 /* GameSceneModelAndSequencer.swift */; };
+		E9FA04701B72D33000F6DC50 /* GameBoardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA046C1B72D33000F6DC50 /* GameBoardController.swift */; };
+		E9FA04711B72D33000F6DC50 /* CloseSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA046D1B72D33000F6DC50 /* CloseSceneView.swift */; };
+		E9FA04741B72D36500F6DC50 /* GameSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA04721B72D36500F6DC50 /* GameSceneView.swift */; };
+		E9FA04751B72D36500F6DC50 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA04731B72D36500F6DC50 /* SettingsModel.swift */; };
+		E9FA04771B72D3A600F6DC50 /* gameboard.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E9FA04761B72D3A600F6DC50 /* gameboard.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +53,21 @@
 		E9FA044A1B72C89100F6DC50 /* Capitalist3Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Capitalist3Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FA044F1B72C89100F6DC50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9FA04501B72C89100F6DC50 /* Capitalist3Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Capitalist3Tests.swift; sourceTree = "<group>"; };
+		E9FA045A1B72D2FF00F6DC50 /* StockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockView.swift; sourceTree = "<group>"; };
+		E9FA045B1B72D2FF00F6DC50 /* InfoCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCardView.swift; sourceTree = "<group>"; };
+		E9FA045C1B72D2FF00F6DC50 /* InfoCardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCardController.swift; sourceTree = "<group>"; };
+		E9FA045D1B72D2FF00F6DC50 /* WelcomeScreenAquireView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeScreenAquireView.swift; sourceTree = "<group>"; };
+		E9FA045E1B72D2FF00F6DC50 /* InfoCardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoCardModel.swift; sourceTree = "<group>"; };
+		E9FA045F1B72D2FF00F6DC50 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		E9FA04601B72D2FF00F6DC50 /* StockModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
+		E9FA04611B72D2FF00F6DC50 /* TileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileModel.swift; sourceTree = "<group>"; };
+		E9FA046A1B72D33000F6DC50 /* GameBoardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardModel.swift; sourceTree = "<group>"; };
+		E9FA046B1B72D33000F6DC50 /* GameSceneModelAndSequencer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneModelAndSequencer.swift; sourceTree = "<group>"; };
+		E9FA046C1B72D33000F6DC50 /* GameBoardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameBoardController.swift; sourceTree = "<group>"; };
+		E9FA046D1B72D33000F6DC50 /* CloseSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloseSceneView.swift; sourceTree = "<group>"; };
+		E9FA04721B72D36500F6DC50 /* GameSceneView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneView.swift; sourceTree = "<group>"; };
+		E9FA04731B72D36500F6DC50 /* SettingsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		E9FA04761B72D3A600F6DC50 /* gameboard.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = gameboard.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +109,21 @@
 		E9FA04351B72C89000F6DC50 /* Capitalist3 */ = {
 			isa = PBXGroup;
 			children = (
+				E9FA04761B72D3A600F6DC50 /* gameboard.scnassets */,
+				E9FA04721B72D36500F6DC50 /* GameSceneView.swift */,
+				E9FA04731B72D36500F6DC50 /* SettingsModel.swift */,
+				E9FA046A1B72D33000F6DC50 /* GameBoardModel.swift */,
+				E9FA046B1B72D33000F6DC50 /* GameSceneModelAndSequencer.swift */,
+				E9FA046C1B72D33000F6DC50 /* GameBoardController.swift */,
+				E9FA046D1B72D33000F6DC50 /* CloseSceneView.swift */,
+				E9FA045A1B72D2FF00F6DC50 /* StockView.swift */,
+				E9FA045B1B72D2FF00F6DC50 /* InfoCardView.swift */,
+				E9FA045C1B72D2FF00F6DC50 /* InfoCardController.swift */,
+				E9FA045D1B72D2FF00F6DC50 /* WelcomeScreenAquireView.swift */,
+				E9FA045E1B72D2FF00F6DC50 /* InfoCardModel.swift */,
+				E9FA045F1B72D2FF00F6DC50 /* PlayerModel.swift */,
+				E9FA04601B72D2FF00F6DC50 /* StockModel.swift */,
+				E9FA04611B72D2FF00F6DC50 /* TileModel.swift */,
 				E9FA04381B72C89000F6DC50 /* AppDelegate.swift */,
 				E9FA043A1B72C89100F6DC50 /* art.scnassets */,
 				E9FA043C1B72C89100F6DC50 /* GameViewController.swift */,
@@ -195,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9FA04771B72D3A600F6DC50 /* gameboard.scnassets in Resources */,
 				E9FA04451B72C89100F6DC50 /* LaunchScreen.xib in Resources */,
 				E9FA04421B72C89100F6DC50 /* Images.xcassets in Resources */,
 				E9FA043B1B72C89100F6DC50 /* art.scnassets in Resources */,
@@ -216,8 +262,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9FA04751B72D36500F6DC50 /* SettingsModel.swift in Sources */,
+				E9FA046F1B72D33000F6DC50 /* GameSceneModelAndSequencer.swift in Sources */,
+				E9FA04621B72D2FF00F6DC50 /* StockView.swift in Sources */,
+				E9FA04711B72D33000F6DC50 /* CloseSceneView.swift in Sources */,
 				E9FA043D1B72C89100F6DC50 /* GameViewController.swift in Sources */,
+				E9FA04681B72D2FF00F6DC50 /* StockModel.swift in Sources */,
+				E9FA04701B72D33000F6DC50 /* GameBoardController.swift in Sources */,
+				E9FA04691B72D2FF00F6DC50 /* TileModel.swift in Sources */,
+				E9FA04741B72D36500F6DC50 /* GameSceneView.swift in Sources */,
+				E9FA04671B72D2FF00F6DC50 /* PlayerModel.swift in Sources */,
+				E9FA04631B72D2FF00F6DC50 /* InfoCardView.swift in Sources */,
+				E9FA046E1B72D33000F6DC50 /* GameBoardModel.swift in Sources */,
+				E9FA04661B72D2FF00F6DC50 /* InfoCardModel.swift in Sources */,
 				E9FA04391B72C89000F6DC50 /* AppDelegate.swift in Sources */,
+				E9FA04651B72D2FF00F6DC50 /* WelcomeScreenAquireView.swift in Sources */,
+				E9FA04641B72D2FF00F6DC50 /* InfoCardController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +475,7 @@
 				E9FA04561B72C89100F6DC50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E9FA04571B72C89100F6DC50 /* Build configuration list for PBXNativeTarget "Capitalist3Tests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +484,7 @@
 				E9FA04591B72C89100F6DC50 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
