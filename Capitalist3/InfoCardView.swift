@@ -14,16 +14,40 @@ class InfoCardView: SKShapeNode {
     override init(){
        super.init()
         
-        var rect = CGRect(origin: CGPointZero, size: CGSize(width: 200, height: 400))
-    
-        self.position = CGPointMake(CGRectGetMidX(self.frame), CGRectGetMidY(self.frame))
-        
+        var rect = CGRect(origin: CGPointMake(0, 0), size: CGSize(width: 640, height: 480))
+       
+        self.position = CGPointMake(100, 100)
         self.path = CGPathCreateWithRect(rect, nil)
-        self.lineWidth = 3
-        self.strokeColor = UIColor.redColor()
-        self.fillColor = UIColor.yellowColor()
+        
+        //Border and Basic Frame
+        self.lineWidth = 1
+        self.strokeColor = UIColor.whiteColor()
+        self.fillColor = UIColor.blackColor()
+        
+        
+        //Title: Acquire and Title: Reference Chart
+        let titleAcquire : SKLabelNode = SKLabelNode(text: "ACQUIRE")
+         titleAcquire.fontColor = UIColor.whiteColor()
+         titleAcquire.fontName = "Chalkduster"
+         titleAcquire.fontSize = 46
+         titleAcquire.position = CGPointMake(10, 10 )
+        
+        let titleReference : SKLabelNode = SKLabelNode (text: "REFERENCE CHART")
+         titleReference.fontColor = UIColor.whiteColor()
+         titleReference.fontName="Chalkduster"
+         titleReference.fontSize = 24
+         titleReference.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame))
+        
+        self.parent?.userInteractionEnabled = false
+        
+        self.addChild(titleAcquire)
+        self.addChild(titleReference)
     }
-
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        let touch = touches.first as? UITouch
+        let location = touch?.locationInNode(self)
+       
+    }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

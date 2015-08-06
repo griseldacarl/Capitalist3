@@ -86,7 +86,7 @@ class GameViewController: UIViewController {
         
         
         
-        //        // retrieve the ship node
+        // retrieve the ship node
         let board = scene.rootNode.childNodeWithName("board", recursively: true)!
         
         // animate the 3d object
@@ -107,7 +107,7 @@ class GameViewController: UIViewController {
         scnView.showsStatistics = true
         
         // configure the view
-        scnView.backgroundColor = UIColor.whiteColor()
+        scnView.backgroundColor = UIColor.blackColor()
         
         // set the scene to the view
         scnView.scene = scene
@@ -132,8 +132,6 @@ class GameViewController: UIViewController {
             // show statistics such as fps and timing information
             scnView.showsStatistics = true
             
-            // configure the view
-            scnView.backgroundColor = UIColor.blackColor()
         }
     }
     override func viewWillAppear(animated: Bool) {
