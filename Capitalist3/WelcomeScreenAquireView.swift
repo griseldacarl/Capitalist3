@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class WelcomeScreenAquireView: SKScene {
+class WelcomeScreenAquireView: SKScene{
     
     var startButtonNode: SKLabelNode!
     var welcomeMessageNode: SKLabelNode!
@@ -19,14 +19,15 @@ class WelcomeScreenAquireView: SKScene {
     var sixplayerButtonNode: SKLabelNode!
     
     
-    
     override init(size: CGSize){
         super.init(size: size)
-        
+    }
+    
+    override func didMoveToView(view: SKView) {
         self.anchorPoint = CGPointMake(0.5,0.5)
         self.scaleMode = SKSceneScaleMode.AspectFill
         self.backgroundColor = UIColor.clearColor()
-    
+        
         
         self.startButtonNode = SKLabelNode(text: "Start")
         self.startButtonNode.fontName  = "Chalkduster"
@@ -41,8 +42,6 @@ class WelcomeScreenAquireView: SKScene {
         borderStartButtonNode.name = "start border"
         self.startButtonNode.addChild(borderStartButtonNode)
         self.addChild(startButtonNode)
-        
-        
         
         
         self.threeplayerButtonNode = SKLabelNode(text: "3 Players")
@@ -111,57 +110,38 @@ class WelcomeScreenAquireView: SKScene {
         self.welcomeMessageNode.name  = "welcomemessage"
         self.welcomeMessageNode.position = CGPoint(x: 0, y: self.startButtonNode.position.y + 500)
         self.addChild(welcomeMessageNode)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateView", name: "GameSceneModelAndSequencer", object: nil)
         
-    
+
     }
     
-     func updateView(){ println ("Welcome Screen was Updated!")}
-
+  
     
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        
-        
         let touch = touches.first as? UITouch
         let location = touch?.locationInNode(self)
-        let node:SKNode = nodeAtPoint(location!)
-        
         
         if self.threeplayerButtonNode.containsPoint(location!){
-            println("You have tap 3 players node!")
             NSNotificationCenter.defaultCenter().postNotificationName("3Players", object: self, userInfo: nil)
-            
         }
 
         if self.fourplayerButtonNode.containsPoint(location!){
-            println("You have tap 4 players!")
             NSNotificationCenter.defaultCenter().postNotificationName("4Players", object: self, userInfo: nil)
-            
         }
         
         if self.fiveplayerButtonNode.containsPoint(location!){
-            println("You have tap 5 players!")
             NSNotificationCenter.defaultCenter().postNotificationName("5Players", object: self, userInfo: nil)
-            
         }
         
         if self.sixplayerButtonNode.containsPoint(location!){
-            println("You have tap 6 players!")
             NSNotificationCenter.defaultCenter().postNotificationName("6Players", object: self, userInfo: nil)
-            
         }
         
         if self.startButtonNode.containsPoint(location!){
-            println("You have tap start button!")
             NSNotificationCenter.defaultCenter().postNotificationName("StartButton", object: self, userInfo: nil)
-            
         }
-        
         
     }
   
-    
-    
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

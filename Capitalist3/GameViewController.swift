@@ -17,6 +17,7 @@ class GameViewController: UIViewController {
     var overlaySceneWelcome: WelcomeScreenAquireView!
     var overlaySceneClose: CloseSceneView!
     var overlaySceneGame: GameSceneView!
+    var overlaySceneTileManagerPlayer: TileManagerPlayerView!
     var gameBoard: SCNScene!
     
     
@@ -31,13 +32,13 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         // create a new scene
-        let scene = SCNScene(named: "gameboard.scnassets/gameboard.dae")!
-        //let scene = SCNScene()
+        self.gameBoard = SCNScene(named: "gameboard.scnassets/gameboard.dae")!
+        
         // create and add a camera to the scene
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         
-        scene.rootNode.addChildNode(cameraNode)
+        self.gameBoard.rootNode.addChildNode(cameraNode)
         
         
         //        // place the camera
@@ -48,32 +49,32 @@ class GameViewController: UIViewController {
         lightRightNode.light = SCNLight()
         lightRightNode.light!.type = SCNLightTypeOmni
         lightRightNode.position = SCNVector3(x: 30, y: 30, z: 100)
-        scene.rootNode.addChildNode(lightRightNode)
+        self.gameBoard.rootNode.addChildNode(lightRightNode)
         
         let lightLeftNode = SCNNode()
         lightLeftNode.light = SCNLight()
         lightLeftNode.light!.type = SCNLightTypeOmni
         lightLeftNode.position = SCNVector3(x: -20, y: 30, z: 100)
-        scene.rootNode.addChildNode(lightLeftNode)
+        self.gameBoard.rootNode.addChildNode(lightLeftNode)
         
         let lightRightBottomNode = SCNNode()
         lightRightBottomNode.light = SCNLight()
         lightRightBottomNode.light!.type = SCNLightTypeOmni
         lightRightBottomNode.position = SCNVector3(x: 30, y: 0, z: 100)
-        scene.rootNode.addChildNode(lightRightBottomNode)
+        self.gameBoard.rootNode.addChildNode(lightRightBottomNode)
         
         let lightLeftBottomNode = SCNNode()
         lightLeftBottomNode.light = SCNLight()
         lightLeftBottomNode.light!.type = SCNLightTypeOmni
         lightLeftBottomNode.position = SCNVector3(x: -20, y: 0, z: 100)
-        scene.rootNode.addChildNode(lightLeftBottomNode)
+        self.gameBoard.rootNode.addChildNode(lightLeftBottomNode)
         
         // create and add a light to the scene
         let lightDirectionNode = SCNNode()
         lightDirectionNode.light = SCNLight()
         lightDirectionNode.light!.type = SCNLightTypeDirectional
         lightDirectionNode.orientation = SCNQuaternion(x:0,y:0,z: 20, w:5)
-        scene.rootNode.addChildNode(lightDirectionNode)
+        self.gameBoard.rootNode.addChildNode(lightDirectionNode)
         
         
         
@@ -82,12 +83,12 @@ class GameViewController: UIViewController {
         ambientLightNode.light = SCNLight()
         ambientLightNode.light!.type = SCNLightTypeAmbient
         ambientLightNode.light!.color = UIColor.whiteColor()
-        scene.rootNode.addChildNode(ambientLightNode)
+        self.gameBoard.rootNode.addChildNode(ambientLightNode)
         
         
         
         // retrieve the ship node
-        let board = scene.rootNode.childNodeWithName("board", recursively: true)!
+        let board = self.gameBoard.rootNode.childNodeWithName("board", recursively: true)!
         
         // animate the 3d object
         board.runAction(SCNAction.rotateByX(1.58, y: 0, z: 0, duration: 1))
@@ -101,17 +102,16 @@ class GameViewController: UIViewController {
         
         
         // allows the user to manipulate the camera
-        scnView.allowsCameraControl = true
+       // scnView.allowsCameraControl = true
         
         // show statistics such as fps and timing information
-        scnView.showsStatistics = true
+        //scnView.showsStatistics = true
         
         // configure the view
         scnView.backgroundColor = UIColor.blackColor()
-        
+        let scene = SCNScene()
         // set the scene to the view
         scnView.scene = scene
-        
         
         
     }
@@ -124,16 +124,21 @@ class GameViewController: UIViewController {
             //Add the overlayScene
             self.overlaySceneWelcome  =  WelcomeScreenAquireView(size: scnView.bounds.size)
             self.overlaySceneWelcome.name="WelcomeScreenAquireView";
+            
             scnView.overlaySKScene = overlaySceneWelcome
+     
+            self.overlaySceneWelcome.addObserver(scnView, forKeyPath: "3playerLabelclicked", options: .New, context: nil)
             
             // allows the user to manipulate the camera
-            scnView.allowsCameraControl = true
+            //scnView.allowsCameraControl = true
             
             // show statistics such as fps and timing information
             scnView.showsStatistics = true
-            
+        
         }
     }
+    
+ 
     override func viewWillAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "set3Players", name: "3Players", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "set4Players", name: "4Players", object: nil)
@@ -141,6 +146,8 @@ class GameViewController: UIViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "set6Players", name: "6Players", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "doStart", name: "StartButton", object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showInfoCardView", name: "infocardbuttonpress", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showStockView", name: "stockbuttonpress", object: nil)
         
     }
     
@@ -150,11 +157,71 @@ class GameViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "5Players", object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "6Players", object: nil)
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "StartButton", object: nil)
+    
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "infocardbuttonpress", object: nil)
+        NSNotificationCenter.defaultCenter().removeObserver(self, name: "stockbuttonpress", object: nil)
+        
+    }
+    
+    func showInfoCardView (){
+        let scnView = self.view as! SCNView
+        scnView.scene =  SCNScene()
+        if(self.overlaySceneGame != nil){
+            self.overlaySceneGame.stock.hidden = true
+            self.overlaySceneGame.infocard.hidden = false
+        }
+    }
+    
+    func showStockView(){
+        let scnView = self.view as! SCNView
+        scnView.scene =  SCNScene()
+        if(self.overlaySceneGame != nil){
+            self.overlaySceneGame.stock.hidden = false
+            self.overlaySceneGame.infocard.hidden = true
+            
+        }
     }
     
     func set3Players(){
         println("Player : 3Players")
         modelGameScene.setNumberOfPlayersWithNotification(self.PlayersToBe3)
+        
+        var scene3Player = SKScene()
+        let scnView = self.view as! SCNView
+        scene3Player.scaleMode = .ResizeFill
+        let threePlayerLabel : SKLabelNode = SKLabelNode(text: "Loading Three Players")
+        threePlayerLabel.fontColor = UIColor.yellowColor()
+        threePlayerLabel.fontSize=48
+        threePlayerLabel.position = CGPointMake(scnView.bounds.size.width/2,scnView.bounds.size.height/2)
+        scene3Player.addChild(threePlayerLabel)
+        scnView.overlaySKScene = scene3Player
+        var timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("transitionToTileManager3PlayerViewScene"), userInfo: nil, repeats: false)
+    }
+    
+    func transitionToTileManager3PlayerViewScene(){
+        let scnView = self.view as! SCNView
+        if(self.overlaySceneTileManagerPlayer != nil){
+            scnView.overlaySKScene = self.overlaySceneTileManagerPlayer
+        }
+        else {
+            self.overlaySceneTileManagerPlayer  =  TileManagerPlayerView(size: scnView.bounds.size)
+            self.overlaySceneTileManagerPlayer.name="TileManagerPlayerView";
+            self.overlaySceneTileManagerPlayer.addPlayers(PlayerModel(_ID: 1000,_name: "Bob",_image: ""), player2: PlayerModel(_ID: 1000,_name: "Jim",_image: ""), player3: PlayerModel(_ID: 1000,_name: "Jeff",_image: ""))
+            scnView.overlaySKScene = overlaySceneTileManagerPlayer
+        }
+    }
+    
+    
+    func transitionToWelcomeScene(){
+       let scnView = self.view as! SCNView
+        if(self.overlaySceneWelcome != nil){
+           scnView.overlaySKScene = self.overlaySceneWelcome
+        }
+        else {
+            self.overlaySceneWelcome  =  WelcomeScreenAquireView(size: scnView.bounds.size)
+            self.overlaySceneWelcome.name="WelcomeScreenAquireView";
+            scnView.overlaySKScene = overlaySceneWelcome
+        }
     }
     
     func set4Players(){
@@ -179,7 +246,7 @@ class GameViewController: UIViewController {
         self.overlaySceneWelcome.hidden = true
         self.overlaySceneGame = GameSceneView(size: self.view.bounds.size)
         scnView.overlaySKScene = self.overlaySceneGame
-        
+        scnView.scene =  self.gameBoard
     }
     
     

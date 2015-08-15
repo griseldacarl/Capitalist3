@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E958A1201B7EF73500BF434C /* TileManagerPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E958A11F1B7EF73500BF434C /* TileManagerPlayerView.swift */; };
 		E9FA04391B72C89000F6DC50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA04381B72C89000F6DC50 /* AppDelegate.swift */; };
 		E9FA043B1B72C89100F6DC50 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = E9FA043A1B72C89100F6DC50 /* art.scnassets */; };
 		E9FA043D1B72C89100F6DC50 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FA043C1B72C89100F6DC50 /* GameViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E958A11F1B7EF73500BF434C /* TileManagerPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileManagerPlayerView.swift; sourceTree = "<group>"; };
 		E9FA04331B72C89000F6DC50 /* Capitalist3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Capitalist3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FA04371B72C89000F6DC50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9FA04381B72C89000F6DC50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			children = (
 				E9FA04761B72D3A600F6DC50 /* gameboard.scnassets */,
 				E9FA045D1B72D2FF00F6DC50 /* WelcomeScreenAquireView.swift */,
+				E9FA043C1B72C89100F6DC50 /* GameViewController.swift */,
 				E9FA04721B72D36500F6DC50 /* GameSceneView.swift */,
 				E9FA04731B72D36500F6DC50 /* SettingsModel.swift */,
 				E9FA046A1B72D33000F6DC50 /* GameBoardModel.swift */,
@@ -121,9 +124,9 @@
 				E9FA045E1B72D2FF00F6DC50 /* InfoCardModel.swift */,
 				E9FA045F1B72D2FF00F6DC50 /* PlayerModel.swift */,
 				E9FA04611B72D2FF00F6DC50 /* TileModel.swift */,
+				E958A11F1B7EF73500BF434C /* TileManagerPlayerView.swift */,
 				E9FA04381B72C89000F6DC50 /* AppDelegate.swift */,
 				E9FA043A1B72C89100F6DC50 /* art.scnassets */,
-				E9FA043C1B72C89100F6DC50 /* GameViewController.swift */,
 				E9FA043E1B72C89100F6DC50 /* Main.storyboard */,
 				E9FA04411B72C89100F6DC50 /* Images.xcassets */,
 				E9FA04431B72C89100F6DC50 /* LaunchScreen.xib */,
@@ -267,6 +270,7 @@
 				E9FA043D1B72C89100F6DC50 /* GameViewController.swift in Sources */,
 				E9FA04681B72D2FF00F6DC50 /* StockModel.swift in Sources */,
 				E9FA04701B72D33000F6DC50 /* GameBoardController.swift in Sources */,
+				E958A1201B7EF73500BF434C /* TileManagerPlayerView.swift in Sources */,
 				E9FA04691B72D2FF00F6DC50 /* TileModel.swift in Sources */,
 				E9FA04741B72D36500F6DC50 /* GameSceneView.swift in Sources */,
 				E9FA04671B72D2FF00F6DC50 /* PlayerModel.swift in Sources */,

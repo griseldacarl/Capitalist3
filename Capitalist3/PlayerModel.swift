@@ -15,10 +15,10 @@ class PlayerModel:NSObject {
     var balance: Int = 0
     var image: String = ""
     
-    init(_ID:Int, _name:String, _image:String) {
+    init(_ID:Int, _name:String, _image:String?) {
         self.ID = _ID
         self.name = _name
-        self.image = _image
+        self.image = _image!
     }
     
     func withdrawPayment(thisPlayer: PlayerModel, withdrawAmt: Int){

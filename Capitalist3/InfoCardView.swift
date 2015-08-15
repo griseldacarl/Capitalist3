@@ -29,8 +29,8 @@ class InfoCardView: SKShapeNode {
         let titleAcquire : SKLabelNode = SKLabelNode(text: "ACQUIRE")
          titleAcquire.fontColor = UIColor.whiteColor()
          titleAcquire.fontName = "Chalkduster"
-         titleAcquire.fontSize = 46
-         titleAcquire.position = CGPointMake(10, 10 )
+         titleAcquire.fontSize = 36
+         titleAcquire.position = CGPointMake(100, rect.size.height-40)
         
         let titleReference : SKLabelNode = SKLabelNode (text: "REFERENCE CHART")
          titleReference.fontColor = UIColor.whiteColor()
@@ -38,14 +38,16 @@ class InfoCardView: SKShapeNode {
          titleReference.fontSize = 24
          titleReference.position = CGPointMake(CGRectGetMidX(self.frame),CGRectGetMidY(self.frame))
         
-        self.parent?.userInteractionEnabled = false
-        
+    
         self.addChild(titleAcquire)
         self.addChild(titleReference)
     }
+
+
     override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
         let touch = touches.first as? UITouch
         let location = touch?.locationInNode(self)
+        
        
     }
     required init?(coder aDecoder: NSCoder) {
